@@ -6,8 +6,11 @@
 * This dataset is significant because it allows us to visualize exactly how income has changed since over a long period of time (approx. 50 years). From the visualization, one can see whether the wealthiest households have grown richer, the poor households poorer, or whether there has been economic mobility. 
 
 ## Data Visualization
-* The visualization will be similar to the game agar.io. 
-* The independent variable in our project is time.
+* Sunburst Diagram
+  * Inner ring: Race
+  * Outer Ring: Mean Income by Percentile
+    * Red is bottom fifth, Blue is top fifth, Orange/Yellow/Green are everything in between
+* We will animate the changing size of slices over time according to change in data.
 
 ## Mockup:
 ![mockup](http://image.prntscr.com/image/8dc95373261647b7874b3082a2106773.png "Sunburst Diagram")
