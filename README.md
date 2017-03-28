@@ -1,11 +1,11 @@
 # PROJ_d3--Team_Greg
 
 ## Description of Dataset
-* source: https://think.cs.vt.edu/corgis/csv/billionaires/billionaires.html
-* This billionaires dataset was compiled over multiple decades and records information about the billionaires listed in Forbes World's Billionaires lists from 1996-2014. There are many fields that provide numerous data on the billionaires themselves. The fields available for this dataset are: ```age``` ```category``` ```citizenship``` ```company name``` ```company type``` ```country code``` ```year of company's founding``` ```from emerging (whether $ came from emerging economies)``` ```GDP``` ```gender``` ```industry``` ```isInherited``` ```name``` ```rank``` ```region``` ```role in business``` ```sector``` ```isFounder``` ```isPolitical``` ```wealth type``` ```worth```
-* This dataset is significant because it allows us to visualize exactly where the rich are obtaining their wealth from. It also allows us to see exactly how much wealthier billionaires have gotten in the past years. 
+* source: https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html
+* This dataset involves incomes of all races over time in the United States. The households are split into fifths (lowest fifth, second lowest fifth,..., top fifth) with an additional column displaying the income of the top 5% Americans. The fields in this data set are year, income (5 different columns for the 5 categories), and number of households (in thousands). 
+* This dataset is significant because it allows us to visualize exactly how income has changed since over a long period of time (approx. 50 years). From the visualization, one can see whether the wealthiest households have grown richer, the poor households poorer, or whether there has been economic mobility. 
 
 ## Agar.io + $$$$$$^100104987372934 == our project
 * The visualization will be similar to the game agar.io. 
 * The independent variable in our project is time.
-* The billionaries will be visualized as dots. Over time, the dots will grow bigger/smaller as their wealth increases/decreases/bankrupts. 
+
