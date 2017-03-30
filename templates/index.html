@@ -1,16 +1,13 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html>
+{% block body %}
 
-  <head>
-    <title>Home</title>
-  </head>
+<h1>Look at our Data</h1>
+<svg height="500" width="1000" id="sv">
+  
+</svg>
 
-  <body>
-    <svg id="sv">
-      
-    </svg>
 
-  </body>
+<script src="{{url_for('static', filename='script.js')}}" />
 
-</html>
+{% endblock %}
