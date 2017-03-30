@@ -1,8 +1,9 @@
 Critiques and Feedback:
 Team Good Hair:
-
+* Good!
 Team Roddgar.io:
-
+* Be careful of quintile wealth values on the outer ring because it may be distorted
+  * width of percentile section (which is based on fixed US currency) is dependent on width of inner race section
 
 Future Format:
 topherM -- 2999-12-31 23:59
