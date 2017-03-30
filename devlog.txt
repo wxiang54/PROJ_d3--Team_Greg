@@ -7,3 +7,6 @@ Team Roddgar.io:
 Future Format:
 topherM -- 2999-12-31 23:59
 
+jackS -- 2017-3-29 23:24
+- i just set up the flask app for us to add the rest of our project to
+
