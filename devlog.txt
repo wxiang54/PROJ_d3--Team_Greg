@@ -11,3 +11,7 @@ topherM -- 2999-12-31 23:59
 jackS -- 2017-3-29 23:24
 - i just set up the flask app for us to add the rest of our project to
 
+amyX -- 2017-3-30 02:02
+- cleaned + converted xls files into csv files
+- wrote python script to read csv files and put data into dictionary
+
