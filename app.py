@@ -9,7 +9,7 @@ app = Flask(__name__)
 #    if not logged in: displays log in/register page
 @app.route("/")
 def home_page():
-    return render_template("index.html")
+    return render_template("finished.html")
 
 if __name__ == "__main__":
     app.debug = True
