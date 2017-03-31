@@ -1,7 +1,15 @@
+ _________  ______   ________   ___ __ __       _______    ______    ______   _______     
+/________/\/_____/\ /_______/\ /__//_//_/\     /______/\  /_____/\  /_____/\ /______/\    
+\__.::.__\/\::::_\/_\::: _  \ \\::\| \| \ \    \::::__\/__\:::_ \ \ \::::_\/_\::::__\/__  
+   \::\ \   \:\/___/\\::(_)  \ \\:.      \ \    \:\ /____/\\:(_) ) )_\:\/___/\\:\ /____/\ 
+    \::\ \   \::___\/_\:: __  \ \\:.\-/\  \ \    \:\\_  _\/ \: __ `\ \\::___\/_\:\\_  _\/ 
+     \::\ \   \:\____/\\:.\ \  \ \\. \  \  \ \    \:\_\ \ \  \ \ `\ \ \\:\____/\\:\_\ \ \ 
+      \__\/    \_____\/ \__\/\__\/ \__\/ \__\/     \_____\/   \_\/ \_\/ \_____\/ \_____\/ 
+                                                                                          
 Critiques and Feedback:
-Team Good Hair:
+Team La Ensemble:
 * Good!
-Team Roddgar.io:
+Team Improved Meme:
 * Be careful of quintile wealth values on the outer ring because it may be distorted
   * width of percentile section (which is based on fixed US currency) is dependent on width of inner race section
 
