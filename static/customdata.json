@@ -1,0 +1,54 @@
+{
+    "name": "US citizens",
+    "children": [
+	{
+	    "name": "first_quint",
+	    "children": [
+		{"name": "white", "size": 1001},
+		{"name": "black", "size": 2001},
+		{"name": "hispanic", "size": 3001},
+		{"name": "asian", "size": 4001}
+	    ]
+	},
+
+	{
+	    "name": "second_quint",
+	    "children": [
+		{"name": "white", "size": 2001},
+		{"name": "black", "size": 1001},
+		{"name": "hispanic", "size": 1301},
+		{"name": "asian", "size": 501}
+	    ]
+	},
+
+	{
+	    "name": "third_quint",
+	    "children": [
+		{"name": "white", "size": 2001},
+		{"name": "black", "size": 3001},
+		{"name": "hispanic", "size": 3001},
+		{"name": "asian", "size": 4001}
+	    ]
+	},
+
+	{
+	    "name": "fourth_quint",
+	    "children": [
+		{"name": "white", "size": 101},
+		{"name": "black", "size": 2001},
+		{"name": "hispanic", "size": 5001},
+		{"name": "asian", "size": 1001}
+	    ]
+	},
+
+	{
+	    "name": "fifth_quint",
+	    "children": [
+		{"name": "white", "size": 2001},
+		{"name": "black", "size": 3001},
+		{"name": "hispanic", "size": 5001},
+		{"name": "asian", "size": 9001}
+	    ]
+	}
+    ]
+}
