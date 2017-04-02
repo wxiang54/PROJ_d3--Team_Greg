@@ -28,3 +28,6 @@ williamX -- 2017-3-31 01:46
 
 williamX -- 2017-4-02 00:19
 - added customized JSON file for our specific data
+
+jackS -- 2017-4-02 18:43
+- working on an algorithm for converting our given data to data that will fit into the model
