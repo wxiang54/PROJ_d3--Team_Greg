@@ -34,3 +34,11 @@ jackS -- 2017-4-02 18:43
 
 jackS -- 2017-4-02 22:18
 - working in csvproceser to convert raw csv data into data to feed into d3 / the model
+
+williamX -- 2017-04-03 04:11
+- recompiled CSV dataset with updated information on racial households/quintiles
+- finished code to convert raw CSV data to JSON-readable format in parser.py
+- linked up Flask to frontend JS with AJAX queries
+- implemented year slider feature to update year displayed
+- implemented year label to display year current being modeled
+- implemented animation feature to gradually cycle through years
