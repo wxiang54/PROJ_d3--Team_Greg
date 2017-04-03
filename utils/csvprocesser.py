@@ -1,4 +1,4 @@
-import csv
+import csv, json
 
 '''
 Key for Reading the Dictionaries:
@@ -28,16 +28,40 @@ def listify(readin):
 		L = []
 	return d
 
-alist = listify(asian)
-blist = listify(black)
-wlist = listify(white)
-hlist = listify(hspnc)
 
-print alist
-print 
-print blist
-print 
-print wlist
-print 
-print hlist
+def one_dict():
+        ret = {}
+        asain_list = listify(asian)
+        black_list = listify(black)
+        white_list = listify(white)
+        hispn_list = listify(hspnc)
+        i = 2002
+        while (i <= 2015):
+                ret[i]={}
+                ret[i]['name'] = i;
+                ret[i]['children']=[]
 
+                j = 1
+                while (j <= 5):
+                        d1  = {}
+                        d1['name'] = "%d quint" % (j)
+                        d1['children'] = []
+                        d1['children'].append({"name": "white", "income": white_list[i][j]} )
+                        d1['children'].append({"name": "black", "income": black_list[i][j]} )
+                        d1['children'].append({"name": "hispanic", "income": hispn_list[i][j]} )
+                        d1['children'].append({"name": "asain", "income": asain_list[i][j]} )
+                        
+                        ret[i]['children'].append(d1)
+                        j+=1
+                        #ret[i]['asian'] = asain_list[i]
+                i+=1
+
+        return ret
+
+d = one_dict()
+#print d
+
+#print
+print json.dumps( d[2002] )
+
+## from / i ran python utils/csvproceser.py > static/jacksdata.json 

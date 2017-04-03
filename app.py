@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, url_for
+import json
 
 #import utils
 
@@ -14,3 +15,14 @@ def home_page():
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
+@app.route("/upcase")
+def upcase():
+    with open('data.json') as data_file:
+        data = json.load(data_file)
+
+    print data
+
+    result = data
+
+    return json.dumps(data)
