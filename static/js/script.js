@@ -30,6 +30,7 @@ var svg = d3.select("body").append("svg")
 
 var currentRoot;
 var click = function click(d) {
+
     currentRoot = d;
     svg.transition()
 	.duration(750)
@@ -95,6 +96,9 @@ var stop = function(e) {
 }
 button_animate.addEventListener("click", animate);
 
+function computeTextRotation(d) {
+  return (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+}
 
 window.onload = function() {
     year_label.textContent = slider.value;
@@ -103,13 +107,41 @@ window.onload = function() {
     $.get("/getData", input, function(root) {
 	root = JSON.parse(root);
 	currentRoot = root;
-	svg.selectAll("path")
+	var g = svg.selectAll("g")
 	    .data(partition.nodes(root))
-	    .enter().append("path")
-	    .attr("d", arc)
+	    .enter().append("g");
+	var path = g.append("path")    
+        .attr("d", arc)
 	    .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
 	    .on("click", click)
-	    .append("title")
-	.text(function(d) { return d.name + "\n" + formatNumber(d.value); });
-    });
+    var text = g.append("text")
+            .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
+            .attr("x", function(d) { return y(d.y); })
+            .attr("dx", "6") // margin
+            .attr("dy", ".35em") // vertical-align
+            .attr("color", "black")
+            .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
+	// .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
+
+    function click(d) {
+       // fade out all text elements
+       text.transition().attr("opacity", 0);
+
+       path.transition()
+         .duration(750)
+         .attrTween("d", arcTween(d))
+         .each("end", function(e, i) {
+             // check if the animated element's data e lies within the visible angle span given in d
+             if (e.x >= d.x && e.x < (d.x + d.dx)) {
+               // get a selection of the associated text element
+               var arcText = d3.select(this.parentNode).select("text");
+               // fade in the text element and recalculate positions
+               arcText.transition().duration(750)
+                 .attr("opacity", 1)
+                 .attr("transform", function() { return "rotate(" + computeTextRotation(e) + ")" })
+                 .attr("x", function(d) { return y(d.y); });
+             }
+         });
+     }
+});
 };

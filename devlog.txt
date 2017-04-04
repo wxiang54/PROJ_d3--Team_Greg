@@ -49,3 +49,8 @@ jackS -- 2017-04-03 23:32
 
 reoK -- 2017-04-04 00:38
 - resolved a small issue concerning circle colors -- colors for each race are more distinguishable
+
+amyX -- 2017-04-04-10:53 
+- changed the way the data is partitioned. instead of path there will be a g element with a path and text element within
+- got basic labels to show up but still need to work on formatting labels
+
