@@ -54,3 +54,7 @@ amyX -- 2017-04-04-10:53
 - changed the way the data is partitioned. instead of path there will be a g element with a path and text element within
 - got basic labels to show up but still need to work on formatting labels
 
+amyX -- 2017-04-04 11:02 
+- implemented opacity transitions for text
+- once you click on another section or again on the svg, the text will fade
+- text now works when you zoom on
