@@ -46,3 +46,6 @@ williamX -- 2017-04-03 04:11
 jackS -- 2017-04-03 23:32
 - worked on fixing bug where clicking anywhere activates event listener for the activate button
   - the bug still persists
+
+reoK -- 2017-04-04 00:38
+- resolved a small issue concerning circle colors -- colors for each race are more distinguishable

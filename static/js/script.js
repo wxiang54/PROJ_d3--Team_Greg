@@ -10,7 +10,7 @@ var x = d3.scale.linear()
 var y = d3.scale.sqrt()
     .range([0, radius]);
 
-var color = d3.scale.category20c();
+var color = d3.scale.category10();
 
 var partition = d3.layout.partition()
     .value(function(d) { return d.size; });
