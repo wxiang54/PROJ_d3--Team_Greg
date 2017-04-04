@@ -16,7 +16,7 @@ Team Improved Meme:
 Future Format:
 topherM -- 2999-12-31 23:59
 
-jackS -- 2017-3-29 23:24
+jackS -- 2017-03-29 23:24
 - i just set up the flask app for us to add the rest of our project to
 
 amyX -- 2017-3-30 02:02
@@ -29,10 +29,10 @@ williamX -- 2017-3-31 01:46
 williamX -- 2017-4-02 00:19
 - added customized JSON file for our specific data
 
-jackS -- 2017-4-02 18:43
+jackS -- 2017-04-02 18:43
 - working on an algorithm for converting our given data to data that will fit into the model
 
-jackS -- 2017-4-02 22:18
+jackS -- 2017-04-02 22:18
 - working in csvproceser to convert raw csv data into data to feed into d3 / the model
 
 williamX -- 2017-04-03 04:11
@@ -42,3 +42,7 @@ williamX -- 2017-04-03 04:11
 - implemented year slider feature to update year displayed
 - implemented year label to display year current being modeled
 - implemented animation feature to gradually cycle through years
+
+jackS -- 2017-04-03 23:32
+- worked on fixing bug where clicking anywhere activates event listener for the activate button
+  - the bug still persists
