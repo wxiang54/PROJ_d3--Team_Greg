@@ -1,0 +1,21 @@
+#key {
+    float: right;
+    width: 25%;
+    border: 2px solid black;
+}
+
+#asain_key {
+    background-color:#ab7dc1;
+}
+
+#white_key {
+    background-color:#70a32d;
+}
+
+#hispanic_key {
+    background-color:#ed6f15;
+}
+
+#black_key {
+    background-color:#bf0505;
+}
