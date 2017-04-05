@@ -75,3 +75,6 @@ amyX - 2017-04-04 23:09
 
 reoK - 2017-04-04 23:56
 - adjusted arc shading so that each quintile corresponds to one color regardless of its parent node
+
+williamX - 2017-04-05 00:13
+- fixed event propagation bug causing an event listener to be added to every obj in the DOM
