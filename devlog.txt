@@ -60,3 +60,6 @@ amyX -- 2017-04-04 11:02
 - implemented opacity transitions for text
 - once you click on another section or again on the svg, the text will fade
 - text now works when you zoom on
+
+jackS -- 2017-04-04 20:42
+- started making the page look like an actual webpage, instead of a random circle with no context

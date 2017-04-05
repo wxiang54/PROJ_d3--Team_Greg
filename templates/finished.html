@@ -7,13 +7,20 @@
       stroke: #fff;
       }
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
 
   
   <body>
-    <h1 id="year_label"></h1>
-    <input type="range" name="year" id="slider" value="2015" min="2002" max="2015">
+    <div class="page-header">
+      <h1>Change in Mean Income	Received by each Quintile of Various Races of US Citizens</h1>
+    </div>
+    <h2 id="year_label"></h2>
+    <div>
+      <h4>Change the Year<h4>
+      <input type="range" name="year" id="slider" value="2015" min="2002" max="2015">
+    </div>
+    
     <button type="button" class="btn btn-primary" id="animate">Animate</button>
     <script type="text/javascript" src="/static/js/d3.v3.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-3.2.0.min.js"></script>
