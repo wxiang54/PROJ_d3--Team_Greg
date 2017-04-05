@@ -42,12 +42,29 @@ var click = function click(d) {
 	})
 	.selectAll("path")
 	.attrTween("d", function(d) { return function() { return arc(d); }; });
-    console.log(d);
+    // console.log(d);
 }
 
 d3.select(self.frameElement).style("height", height + "px");
 
+function arcTween(d) {
+  var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
+      yd = d3.interpolate(y.domain(), [d.y, 1]),
+      yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+  return function(d, i) {
+    return i
+        ? function(t) { return arc(d); }
+        : function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(d); };
+  };
+}
 
+function computeTextRotation(d) {
+  return (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+}
+
+function computeTextRotationR(d) {
+  return (x(d.x + d.dx / 2 ) - Math.PI / 2) / Math.PI * 180;
+}
 
 var updateYear = function(e) {
     year_label.textContent = slider.value;
@@ -56,14 +73,27 @@ var updateYear = function(e) {
     var input = {'year': slider.value};
     $.get("/getData", input, function(root) {
 	root = JSON.parse(root);
-	svg.selectAll("path")
+    var g = svg.selectAll("g");
+    g.selectAll("text").remove();
+
+	var path = svg.selectAll("path")
 	    .data(partition.nodes(root))
-	    .enter()
-	console.log(currentRoot);
-    });
+	    .enter();
+
+    var nt = g.append("text")
+        .attr("transform", function(d) { return "rotate(" + computeTextRotationR(d) + ")"; })
+        .attr("x", function(d) { return y(d.y); })
+        .attr("y", function(d) { return x(d.x); })
+        .attr("dx", "6") // margin
+        .attr("dy", ".35em") // vertical-align
+        .attr("color", "black")
+        .attr("style", 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;')
+        .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
   
     click(currentRoot);
+});
 };
+
 
 
 var slider = document.getElementById("slider");
@@ -86,7 +116,8 @@ var animate = function(e) {
 	    stop(e);
 	}
     }, 200); //change this for timer
-}
+};
+
 var stop = function(e) {
     button_animate.textContent = "Animate";
     this.removeEventListener("click", stop);
@@ -96,22 +127,8 @@ var stop = function(e) {
 }
 button_animate.addEventListener("click", animate);
 
-function arcTween(d) {
-  var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
-      yd = d3.interpolate(y.domain(), [d.y, 1]),
-      yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
-  return function(d, i) {
-    return i
-        ? function(t) { return arc(d); }
-        : function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(d); };
-  };
-}
 
-function computeTextRotation(d) {
-  return (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
-}
-
-window.onload = function() {
+var setup = function() {
     year_label.textContent = slider.value;
     
     var input = {'year': slider.value};
@@ -133,27 +150,31 @@ window.onload = function() {
             .attr("color", "black")
             .attr("style", 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;')
             .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
-	// .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
 
-    function click(d) {
-       // fade out all text elements
-       text.transition().attr("opacity", 0);
+    // function click(d) {
+    //    // fade out all text elements
+    //    text.transition().attr("opacity", 0);
 
-       path.transition()
-         .duration(750)
-         .attrTween("d", arcTween(d))
-         .each("end", function(e, i) {
-             // check if the animated element's data e lies within the visible angle span given in d
-             if (e.x >= d.x && e.x < (d.x + d.dx)) {
-               // get a selection of the associated text element
-               var arcText = d3.select(this.parentNode).select("text");
-               // fade in the text element and recalculate positions
-               arcText.transition().duration(750)
-                 .attr("opacity", 1)
-                 .attr("transform", function() { return "rotate(" + computeTextRotation(e) + ")" })
-                 .attr("x", function(d) { return y(d.y); });
-             }
-         });
-     }
+    //    path.transition()
+    //      .duration(750)
+    //      .attrTween("d", arcTween(d))
+    //      .each("end", function(e, i) {
+    //          // check if the animated element's data e lies within the visible angle span given in d
+    //          if (e.x >= d.x && e.x < (d.x + d.dx)) {
+    //            // get a selection of the associated text element
+    //            var arcText = d3.select(this.parentNode).select("text");
+    //            // fade in the text element and recalculate positions
+    //            arcText.transition().duration(750)
+    //              .attr("opacity", 1)
+    //              .attr("transform", function() { return "rotate(" + computeTextRotation(e) + ")" })
+    //              .attr("x", function(d) { return y(d.y); });
+    //          }
+    //      });
+    //  };
 });
+};
+
+
+window.onload = function(){
+    setup();
 };
