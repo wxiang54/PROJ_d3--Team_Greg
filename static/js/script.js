@@ -105,9 +105,9 @@ var button_animate = document.getElementById("animate");
 var animate = function(e) {
     slider.value = 2002;
     button_animate.textContent = "Stop";
-    this.removeEventListener("click", animate);
-    this.addEventListener("click", stop);
-    console.log(this);
+    button_animate.removeEventListener("click", animate);
+    button_animate.addEventListener("click", stop);
+//    console.log(this);
     intervalID = setInterval( function() {
 	slider.value++;
 	updateYear(e);
@@ -120,9 +120,9 @@ var animate = function(e) {
 
 var stop = function(e) {
     button_animate.textContent = "Animate";
-    this.removeEventListener("click", stop);
-    this.addEventListener("click", animate);
-    console.log(this);
+    button_animate.removeEventListener("click", stop);
+    button_animate.addEventListener("click", animate);
+//    console.log(this);
     clearInterval(intervalID);
 }
 button_animate.addEventListener("click", animate);
