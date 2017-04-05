@@ -72,3 +72,6 @@ amyX -- 2017-04-04 22:33
 
 amyX - 2017-04-04 23:09
 - added padding to fix cramped looked on edges
+
+reoK - 2017-04-04 23:56
+- adjusted arc shading so that each quintile corresponds to one color regardless of its parent node
