@@ -66,3 +66,9 @@ jackS -- 2017-04-04 20:42
 
 jackS -- 2017-04-04 21:09
 - added the key for races
+
+amyX -- 2017-04-04 22:33
+- implemented basic framework for shifting text
+
+amyX - 2017-04-04 23:09
+- added padding to fix cramped looked on edges
