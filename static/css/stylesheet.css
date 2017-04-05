@@ -4,18 +4,22 @@
     border: 2px solid black;
 }
 
-#asain_key {
-    background-color:#ab7dc1;
+#household_key {
+    background-color:#C8C8C8;
+}
+
+#asian_key {
+    background-color:#FF6666;
 }
 
 #white_key {
-    background-color:#70a32d;
+    background-color:#FFFF33;
 }
 
 #hispanic_key {
-    background-color:#ed6f15;
+    background-color:#00FF64;
 }
 
 #black_key {
-    background-color:#bf0505;
+    background-color:#3399FF;
 }

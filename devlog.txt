@@ -84,3 +84,7 @@ amyX -- 2017-04-05 00:41
 
 reoK -- 2017-04-05 01:01
 - working on shading sub-arcs (buggy)
+
+williamX -- 2017-04-05 03:16
+- finished shading sub-arcs
+- fixed some minor glitched on animation-sunburst interactions (and discovered more)
