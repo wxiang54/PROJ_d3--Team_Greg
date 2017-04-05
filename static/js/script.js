@@ -88,7 +88,7 @@ var updateYear = function(e) {
         .attr("dy", ".35em") // vertical-align
         .attr("color", "black")
         .attr("style", 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;')
-        .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
+        .text(function(d) { return formatNumber(d.value); });
   
     click(currentRoot);
 });
@@ -150,7 +150,7 @@ var setup = function() {
             .attr("dy", ".35em") // vertical-align
             .attr("color", "black")
             .attr("style", 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;')
-            .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
+            .text(function(d) { return formatNumber(d.value); });
 
     function click(d) {
        // fade out all text elements
