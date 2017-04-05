@@ -68,7 +68,7 @@ function computeTextRotationR(d) {
 
 var updateYear = function(e) {
     year_label.textContent = slider.value;
-    
+
     //OUR AJAX REQUEST TO FLASK FOR DATA
     var input = {'year': slider.value};
     $.get("/getData", input, function(root) {
@@ -89,7 +89,7 @@ var updateYear = function(e) {
         .attr("color", "black")
         .attr("style", 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;')
         .text(function(d) { return formatNumber(d.value); });
-  
+
     click(currentRoot);
 });
 };
@@ -127,10 +127,36 @@ var stop = function(e) {
 }
 button_animate.addEventListener("click", animate);
 
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function hexToRGB(hex) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+    var rgb = [r, g, b];
+    return rgb;
+}
+
+function generateShades(r, g, b){
+  var r = r % 256;
+  var g = g % 256;
+  var b = b % 256;
+  var shades = [];
+  for(var i = 0; i < 5; i++){
+    r += 55;
+    g += 55;
+    b += 55;
+    shades.push(rgbToHex(r, g, b));
+  }
+  return shades;
+}
+
 
 var setup = function() {
     year_label.textContent = slider.value;
-    
+
     var input = {'year': slider.value};
     $.get("/getData", input, function(root) {
 	root = JSON.parse(root);
@@ -138,12 +164,27 @@ var setup = function() {
 	var g = svg.selectAll("g")
 	    .data(partition.nodes(root))
 	    .enter().append("g");
-	var path = g.append("path")    
+	var path = g.append("path")
         .attr("d", arc)
-	    .style("fill", function(d) { return color(d.name); })
+        .style("fill", function(d) {
+          return color(d.name);
+          //  if (d.children) return color(d.name);
+          //  else {
+          //    var quint;
+          //    if (d.name == "quint_one") quint = 1;
+          //    else if (d.name == "quint_two") quint = 2;
+          //    else if (d.name == "quint_three") quint = 3;
+          //    else if (d.name == "quint_four") quint = 4;
+          //    else if (d.name == "quint_five") quint = 5;
+          //    var rgb = hexToRGB(color(d.parent.name));
+          //    var shades = generateShades(rgb[0], rgb[1], rgb[2]);
+          //    console.log(shades);
+          //    return shades[quint-1];
+          //  }
+         })
 	    .on("click", click)
     var text = g.append("text")
-            .attr("transform", function(d) { 
+            .attr("transform", function(d) {
                 return "rotate(" + computeTextRotation(d) + ")"; })
             .attr("x", function(d) { return y(d.y); })
             .attr("dx", "6") // margin

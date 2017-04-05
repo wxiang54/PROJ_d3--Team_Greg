@@ -1,13 +1,13 @@
- _________  ______   ________   ___ __ __       _______    ______    ______   _______     
-/________/\/_____/\ /_______/\ /__//_//_/\     /______/\  /_____/\  /_____/\ /______/\    
-\__.::.__\/\::::_\/_\::: _  \ \\::\| \| \ \    \::::__\/__\:::_ \ \ \::::_\/_\::::__\/__  
-   \::\ \   \:\/___/\\::(_)  \ \\:.      \ \    \:\ /____/\\:(_) ) )_\:\/___/\\:\ /____/\ 
-    \::\ \   \::___\/_\:: __  \ \\:.\-/\  \ \    \:\\_  _\/ \: __ `\ \\::___\/_\:\\_  _\/ 
-     \::\ \   \:\____/\\:.\ \  \ \\. \  \  \ \    \:\_\ \ \  \ \ `\ \ \\:\____/\\:\_\ \ \ 
-      \__\/    \_____\/ \__\/\__\/ \__\/ \__\/     \_____\/   \_\/ \_\/ \_____\/ \_____\/ 
+ _________  ______   ________   ___ __ __       _______    ______    ______   _______
+/________/\/_____/\ /_______/\ /__//_//_/\     /______/\  /_____/\  /_____/\ /______/\
+\__.::.__\/\::::_\/_\::: _  \ \\::\| \| \ \    \::::__\/__\:::_ \ \ \::::_\/_\::::__\/__
+   \::\ \   \:\/___/\\::(_)  \ \\:.      \ \    \:\ /____/\\:(_) ) )_\:\/___/\\:\ /____/\
+    \::\ \   \::___\/_\:: __  \ \\:.\-/\  \ \    \:\\_  _\/ \: __ `\ \\::___\/_\:\\_  _\/
+     \::\ \   \:\____/\\:.\ \  \ \\. \  \  \ \    \:\_\ \ \  \ \ `\ \ \\:\____/\\:\_\ \ \
+      \__\/    \_____\/ \__\/\__\/ \__\/ \__\/     \_____\/   \_\/ \_\/ \_____\/ \_____\/
 
 Members: William Xiang, Amy Xu, Jack Schluger, Reo Kimura
-                                                                                          
+
 Critiques and Feedback:
 Team La Ensemble:
 * Good!
@@ -52,11 +52,11 @@ jackS -- 2017-04-03 23:32
 reoK -- 2017-04-04 00:38
 - resolved a small issue concerning circle colors -- colors for each race are more distinguishable
 
-amyX -- 2017-04-04-10:53 
+amyX -- 2017-04-04-10:53
 - changed the way the data is partitioned. instead of path there will be a g element with a path and text element within
 - got basic labels to show up but still need to work on formatting labels
 
-amyX -- 2017-04-04 11:02 
+amyX -- 2017-04-04 11:02
 - implemented opacity transitions for text
 - once you click on another section or again on the svg, the text will fade
 - text now works when you zoom on
@@ -70,14 +70,17 @@ jackS -- 2017-04-04 21:09
 amyX -- 2017-04-04 22:33
 - implemented basic framework for shifting text
 
-amyX - 2017-04-04 23:09
+amyX -- 2017-04-04 23:09
 - added padding to fix cramped looked on edges
 
-reoK - 2017-04-04 23:56
+reoK -- 2017-04-04 23:56
 - adjusted arc shading so that each quintile corresponds to one color regardless of its parent node
 
-williamX - 2017-04-05 00:13
+williamX -- 2017-04-05 00:13
 - fixed event propagation bug causing an event listener to be added to every obj in the DOM
 
 amyX -- 2017-04-05 00:41
 - removed text from labels
+
+reoK -- 2017-04-05 01:01
+- working on shading sub-arcs (buggy)
