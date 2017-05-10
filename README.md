@@ -1,5 +1,11 @@
 # PROJ_d3--Team_Greg
 
+## Team Members
+* PM: William Xiang
+* Amy Xu
+* Jack Schluger
+* Reo Kimura
+
 ## Description of Dataset
 * source: https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html
 * This dataset involves incomes of all races over time in the United States. The households are split into fifths (lowest fifth, second lowest fifth,..., top fifth) with an additional column displaying the income of the top 5% Americans. The fields in this data set are year, income (5 different columns for the 5 categories), and number of households (in thousands). 
